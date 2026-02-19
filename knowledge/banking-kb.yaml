@@ -1,0 +1,35 @@
+- id: banking_001
+  title: How to Check Account Balance
+  content: You can check your account balance through multiple channels including online banking, mobile app, ATM, or by calling customer service.
+  category: account_help
+  tags: [balance, account, check]
+
+- id: banking_002
+  title: How to Transfer Money
+  content: Transfers can be made between your own accounts or to other people. You can use online banking, mobile app, or visit a branch. Transfers typically complete within 1-3 business days.
+  category: transfers
+  tags: [transfer, money, payment]
+
+- id: banking_003
+  title: Fraud Protection and Dispute Process
+  content: If you notice unauthorized transactions, contact us immediately. We have zero-liability fraud protection. Disputes must be reported within 60 days. We'll investigate and typically resolve within 10 business days.
+  category: security
+  tags: [fraud, dispute, security]
+
+- id: banking_004
+  title: Loan Options and Interest Rates
+  content: We offer personal loans from $1,000 to $100,000 with flexible terms. Current rates range from 4% to 12% based on creditworthiness. Apply online or visit a branch for pre-approval.
+  category: loans
+  tags: [loan, credit, interest]
+
+- id: banking_005
+  title: Card Services and Support
+  content: Our debit and credit cards come with fraud protection, reward programs, and emergency replacement services. 24/7 support is available. Cards can be blocked or unblocked through online banking.
+  category: cards
+  tags: [card, debit, credit]
+
+- id: banking_006
+  title: Minimum Balance Requirements
+  content: Checking accounts require a $500 minimum balance. Savings accounts require $1,000. Maintain minimums to avoid monthly fees.
+  category: account_policies
+  tags: [minimum, balance, fee]

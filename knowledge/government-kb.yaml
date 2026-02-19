@@ -1,0 +1,35 @@
+- id: gov_001
+  title: How to Apply for Building Permit
+  content: Submit applications through the online portal at permits.gov.example. Required documents include property survey, architectural plans, and proof of ownership. Processing typically takes 10-15 business days. Fee is $500-$2000 depending on project scope.
+  category: permits
+  tags: [permit, building, application]
+
+- id: gov_002
+  title: Benefit Eligibility and Application
+  content: Check eligibility for various benefits through our online assessment tool. Required documents include income verification, identification, and residency proof. Applications can be submitted online, by mail, or in person at local offices. Decision within 30 days.
+  category: benefits
+  tags: [benefit, eligible, assistance]
+
+- id: gov_003
+  title: Tax Filing Requirements and Deadlines
+  content: Tax year 2024 ends December 31. Personal return deadline is April 15, 2025. Extensions available until October 15. File online through approved platforms or with a tax professional. Late filing penalties are 5% per month.
+  category: taxes
+  tags: [tax, filing, deadline]
+
+- id: gov_004
+  title: Requesting Government Records and Documents
+  content: Request birth certificates, marriage licenses, and other records through vital records office. Processing takes 2-4 weeks. Copies cost $15-$50 per document. Rush processing available for additional fee. Some records require proof of relationship.
+  category: documents
+  tags: [document, record, certificate]
+
+- id: gov_005
+  title: Filing Complaints and Grievances
+  content: File complaints online at complaints.gov.example or in person. Include specific details, dates, and supporting documents. Complaints are logged and investigated. You'll receive updates via email. Resolution typically takes 30-60 days.
+  category: complaints
+  tags: [complaint, grievance, report]
+
+- id: gov_006
+  title: Voter Registration and Election Information
+  content: Register to vote online at voter.gov.example. Registration deadline is 15 days before election. Early voting available 2 weeks prior. Election day is first Tuesday in November. Need valid ID at polling place.
+  category: voting
+  tags: [voting, election, registration]

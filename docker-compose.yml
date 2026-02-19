@@ -1,0 +1,34 @@
+# docker-compose.yml for MCP Knowledge + Action Bot
+
+version: '3.8'
+
+services:
+  mcp-bot:
+    build: .
+    container_name: mcp-qa-bot
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount configs and knowledge for hot-swapping
+      - ./configs:/app/configs:ro
+      - ./knowledge:/app/knowledge:ro
+    environment:
+      # Add connector endpoints/credentials here
+      - TICKETING_ENDPOINT=${TICKETING_ENDPOINT:-https://api.example.com/tickets}
+      - CRM_ENDPOINT=${CRM_ENDPOINT:-https://api.example.com/crm}
+      - EHR_ENDPOINT=${EHR_ENDPOINT:-https://api.example.com/ehr}
+      - OSS_BSS_ENDPOINT=${OSS_BSS_ENDPOINT:-https://api.example.com/oss}
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge

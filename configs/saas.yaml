@@ -1,0 +1,77 @@
+industry: saas
+description: Product help desk for SaaS industry
+
+bot_persona:
+  tone: friendly
+  style: concise
+  greeting: "Hi! Welcome to product support. What can I help you with?"
+  closing: "Thanks for using our product! Feel free to reach out anytime."
+  escalation_message: "I'm escalating this to our support team for personalized help."
+
+knowledge:
+  corpus_path: ../knowledge/saas-kb.yaml
+  search_type: hybrid
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+intents:
+  - name: feature_usage
+    description: User asks how to use a feature
+    keywords: ["how to", "feature", "usage", "guide", "help", "tutorial"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: bug_report
+    description: User reports a bug or issue
+    keywords: ["bug", "error", "broken", "not working", "issue", "crash"]
+    fallback: false
+    escalate_to_human: true
+
+  - name: account_upgrade
+    description: User wants to upgrade account or plan
+    keywords: ["upgrade", "plan", "pricing", "payment", "subscription"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: integration_help
+    description: User needs help with integrations
+    keywords: ["integration", "api", "webhook", "plugin", "connect"]
+    fallback: false
+    escalate_to_human: true
+
+  - name: billing_issue
+    description: User has billing or payment issues
+    keywords: ["billing", "invoice", "payment", "charge", "credit", "refund"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: fallback
+    description: Default intent
+    keywords: []
+    fallback: true
+    escalate_to_human: false
+
+actions:
+  - name: create_ticket
+    type: mock
+    description: Create support ticket
+    mock_response:
+      status: success
+      ticket_created: true
+
+  - name: update_user_settings
+    type: rest_api
+    endpoint: "https://api.saas.internal/users/settings"
+    method: PATCH
+    description: Update user account settings
+
+  - name: create_payment_record
+    type: webhook
+    endpoint: "https://payments.saas.internal/record"
+    method: POST
+    description: Record payment
+
+  - name: send_email
+    type: rest_api
+    endpoint: "https://email.saas.internal/send"
+    method: POST
+    description: Send email to user

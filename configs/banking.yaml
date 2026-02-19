@@ -1,0 +1,77 @@
+industry: banking
+description: Account servicing bot for banking industry
+
+bot_persona:
+  tone: formal
+  style: professional
+  greeting: "Hello, I'm your banking assistant. How can I help you today?"
+  closing: "Thank you for banking with us. Is there anything else I can assist you with?"
+  escalation_message: "I'm connecting you with a specialist who can better assist you."
+
+knowledge:
+  corpus_path: ../knowledge/banking-kb.yaml
+  search_type: hybrid
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+intents:
+  - name: account_balance
+    description: Customer wants to check account balance
+    keywords: ["balance", "how much", "account status", "available funds"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: account_transfer
+    description: Customer wants to transfer funds
+    keywords: ["transfer", "send money", "wire", "payment"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: fraud_dispute
+    description: Customer reports fraud or disputes a transaction
+    keywords: ["fraud", "dispute", "unauthorized", "suspicious", "wrong charge"]
+    fallback: false
+    escalate_to_human: true
+
+  - name: loan_inquiry
+    description: Customer inquires about loans
+    keywords: ["loan", "mortgage", "credit", "borrowing", "interest rate"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: card_issue
+    description: Customer has card-related issues
+    keywords: ["card", "blocked", "declined", "lost card", "pin", "atm"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: fallback
+    description: Default intent when no match found
+    keywords: []
+    fallback: true
+    escalate_to_human: false
+
+actions:
+  - name: create_ticket
+    type: mock
+    description: Create a support ticket
+    mock_response:
+      status: success
+      ticket_created: true
+
+  - name: update_account
+    type: webhook
+    endpoint: "https://api.banking.internal/accounts/update"
+    method: POST
+    description: Update account information
+
+  - name: send_notification
+    type: rest_api
+    endpoint: "https://notifications.banking.internal/send"
+    method: POST
+    description: Send notification to customer
+
+  - name: transfer_funds
+    type: webhook
+    endpoint: "https://api.banking.internal/transfers"
+    method: POST
+    description: Execute fund transfer

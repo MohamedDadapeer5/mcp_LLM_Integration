@@ -1,0 +1,35 @@
+- id: health_001
+  title: How to Book an Appointment
+  content: Appointments can be booked online through our patient portal, via phone, or through our mobile app. Most appointments are available within 2-4 weeks. Emergency appointments are available same-day.
+  category: appointments
+  tags: [appointment, booking, schedule]
+
+- id: health_002
+  title: Prescription Refill Process
+  content: Request refills through the patient portal, call the pharmacy, or ask at your appointment. Most prescriptions are ready within 24 hours. Insurance may require prior authorization for some medications.
+  category: medications
+  tags: [prescription, refill, pharmacy]
+
+- id: health_003
+  title: Common Symptoms and When to Seek Care
+  content: For fever, severe pain, difficulty breathing, or chest pain, seek immediate care at an ER. For cold symptoms, mild pain, or skin issues, schedule a regular appointment. Virtual visits are available for minor concerns.
+  category: medical_guidance
+  tags: [symptom, care, emergency]
+
+- id: health_004
+  title: Insurance and Billing Questions
+  content: Most major insurance plans are accepted. Copays are due at visit. We file claims electronically. Billing statements are available online. Financial assistance programs are available for eligible patients.
+  category: billing
+  tags: [insurance, billing, copay]
+
+- id: health_005
+  title: Test Results Access
+  content: Lab and imaging results are available in the patient portal within 1-3 days. Your doctor will contact you to discuss any abnormal results. Results can also be requested by phone.
+  category: test_results
+  tags: [results, lab, test]
+
+- id: health_006
+  title: Patient Rights and Responsibilities
+  content: You have the right to privacy, informed consent, and quality care. You're responsible for providing accurate health information and following treatment plans. We're committed to equitable care for all.
+  category: policies
+  tags: [rights, responsibility, policy]

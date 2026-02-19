@@ -1,0 +1,77 @@
+industry: healthcare
+description: Patient FAQ bot for healthcare industry
+
+bot_persona:
+  tone: friendly
+  style: empathetic
+  greeting: "Welcome! I'm here to help answer your healthcare questions."
+  closing: "Take care of yourself! Please reach out if you have more questions."
+  escalation_message: "Let me connect you with a healthcare professional for more personalized support."
+
+knowledge:
+  corpus_path: ../knowledge/healthcare-kb.yaml
+  search_type: semantic
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+intents:
+  - name: appointment_booking
+    description: Patient wants to book or reschedule appointment
+    keywords: ["appointment", "schedule", "book", "reschedule", "doctor", "visit"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: prescription_refill
+    description: Patient needs prescription refill
+    keywords: ["prescription", "refill", "medication", "medicine", "pharmacy"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: medical_guidance
+    description: Patient asks for medical advice
+    keywords: ["symptom", "pain", "sick", "treatment", "diagnosis", "cure"]
+    fallback: false
+    escalate_to_human: true
+
+  - name: billing_inquiry
+    description: Patient has billing or insurance questions
+    keywords: ["bill", "insurance", "cost", "payment", "copay", "deductible"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: test_results
+    description: Patient wants to know test results
+    keywords: ["results", "test", "lab", "blood work", "scan"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: fallback
+    description: Default intent
+    keywords: []
+    fallback: true
+    escalate_to_human: false
+
+actions:
+  - name: create_ticket
+    type: mock
+    description: Create a support ticket
+    mock_response:
+      status: success
+      ticket_created: true
+
+  - name: book_appointment
+    type: rest_api
+    endpoint: "https://api.healthcare.internal/appointments"
+    method: POST
+    description: Book appointment
+
+  - name: request_prescription_refill
+    type: webhook
+    endpoint: "https://api.healthcare.internal/prescriptions"
+    method: POST
+    description: Request prescription refill
+
+  - name: send_message_to_provider
+    type: rest_api
+    endpoint: "https://messaging.healthcare.internal/send"
+    method: POST
+    description: Send message to healthcare provider

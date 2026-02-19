@@ -1,0 +1,77 @@
+industry: government
+description: Citizen services bot for government sector
+
+bot_persona:
+  tone: formal
+  style: informative
+  greeting: "Welcome to Government Services. How may I assist you today?"
+  closing: "Thank you for using government services. We're here to help."
+  escalation_message: "I'm connecting you with a government representative for assistance."
+
+knowledge:
+  corpus_path: ../knowledge/government-kb.yaml
+  search_type: text
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+intents:
+  - name: permit_application
+    description: Citizen asks about permit applications
+    keywords: ["permit", "license", "application", "apply", "approval"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: benefit_eligibility
+    description: Citizen inquires about benefit eligibility
+    keywords: ["benefit", "eligible", "assistance", "welfare", "program"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: tax_inquiry
+    description: Citizen has tax-related questions
+    keywords: ["tax", "filing", "refund", "return", "deduction"]
+    fallback: false
+    escalate_to_human: true
+
+  - name: legal_documentation
+    description: Citizen needs legal documents or records
+    keywords: ["document", "certificate", "record", "legal", "copy"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: complaint_filing
+    description: Citizen wants to file complaint
+    keywords: ["complaint", "issue", "report", "problem", "grievance"]
+    fallback: false
+    escalate_to_human: true
+
+  - name: fallback
+    description: Default intent
+    keywords: []
+    fallback: true
+    escalate_to_human: false
+
+actions:
+  - name: create_ticket
+    type: mock
+    description: Create case file
+    mock_response:
+      status: success
+      case_created: true
+
+  - name: submit_permit_application
+    type: webhook
+    endpoint: "https://api.government.internal/permits"
+    method: POST
+    description: Submit permit application
+
+  - name: check_benefit_status
+    type: rest_api
+    endpoint: "https://api.government.internal/benefits/status"
+    method: GET
+    description: Check benefit status
+
+  - name: file_complaint
+    type: webhook
+    endpoint: "https://complaints.government.internal/file"
+    method: POST
+    description: File official complaint

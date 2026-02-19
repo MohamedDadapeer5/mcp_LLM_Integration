@@ -1,0 +1,35 @@
+- id: saas_001
+  title: Getting Started with the Dashboard
+  content: Access your dashboard at app.example.com. The main dashboard shows key metrics, recent activities, and quick actions. Customize your view using the settings icon. Most users are productive within 30 minutes.
+  category: onboarding
+  tags: [dashboard, getting-started, tutorial]
+
+- id: saas_002
+  title: Creating and Managing Projects
+  content: Create new projects from the Projects menu. Each project is isolated and has its own settings, team members, and data. Invite team members by email. Archive old projects without deleting data.
+  category: projects
+  tags: [project, management, create]
+
+- id: saas_003
+  title: Common Errors and Troubleshooting
+  content: Error 500 usually requires a refresh or logout/login. Error 403 means insufficient permissions. Clear browser cache if experiencing UI issues. Contact support if errors persist. Check system status page for outages.
+  category: troubleshooting
+  tags: [bug, error, fix]
+
+- id: saas_004
+  title: API Documentation and Integration
+  content: Our API is RESTful and documented at api.example.com/docs. Rate limits are 1000 requests/hour for Pro users. Webhooks require HTTPS endpoints with valid SSL certificates. SDK available for Python, JavaScript, and Go.
+  category: integration
+  tags: [api, integration, webhook]
+
+- id: saas_005
+  title: Pricing Plans and Upgrading
+  content: Starter plan is $29/month, Professional is $99/month, Enterprise is custom. Upgrade anytime; downgrade during billing cycle. Volume discounts available. Free trial includes all Pro features for 14 days.
+  category: billing
+  tags: [pricing, upgrade, plan]
+
+- id: saas_006
+  title: Data Security and Backup
+  content: All data is encrypted at rest and in transit. Automated daily backups retained for 30 days. SOC 2 Type II certified. GDPR compliant. Two-factor authentication available for accounts.
+  category: security
+  tags: [security, backup, compliance]

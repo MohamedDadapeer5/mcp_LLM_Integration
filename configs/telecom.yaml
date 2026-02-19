@@ -1,0 +1,77 @@
+industry: telecom
+description: Troubleshooting and plan guidance bot for telecom industry
+
+bot_persona:
+  tone: friendly
+  style: supportive
+  greeting: "Hello! I'm your telecom support assistant. Let's fix that for you!"
+  closing: "Thanks for choosing us! Enjoy your service!"
+  escalation_message: "Let me connect you with a technical specialist."
+
+knowledge:
+  corpus_path: ../knowledge/telecom-kb.yaml
+  search_type: hybrid
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+intents:
+  - name: connectivity_issue
+    description: Customer has connection problems
+    keywords: ["no signal", "no connection", "network", "disconnected", "wifi", "internet"]
+    fallback: false
+    escalate_to_human: true
+
+  - name: plan_change
+    description: Customer wants to change plan
+    keywords: ["plan", "upgrade", "downgrade", "change", "switch", "data", "minutes"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: billing_issue
+    description: Customer has billing questions
+    keywords: ["bill", "charge", "billing", "payment", "overage", "cost"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: device_support
+    description: Customer needs device help
+    keywords: ["phone", "device", "settings", "setup", "app", "install"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: roaming_inquiry
+    description: Customer asks about roaming
+    keywords: ["roaming", "international", "abroad", "travel", "foreign"]
+    fallback: false
+    escalate_to_human: false
+
+  - name: fallback
+    description: Default intent
+    keywords: []
+    fallback: true
+    escalate_to_human: false
+
+actions:
+  - name: create_ticket
+    type: mock
+    description: Create service ticket
+    mock_response:
+      status: success
+      ticket_created: true
+
+  - name: restart_service
+    type: rest_api
+    endpoint: "https://api.telecom.internal/services/restart"
+    method: POST
+    description: Restart service
+
+  - name: change_plan
+    type: webhook
+    endpoint: "https://api.telecom.internal/plans/change"
+    method: POST
+    description: Change customer plan
+
+  - name: send_sms_instruction
+    type: rest_api
+    endpoint: "https://sms.telecom.internal/send"
+    method: POST
+    description: Send SMS with instructions

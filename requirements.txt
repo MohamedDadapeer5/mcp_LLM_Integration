@@ -1,0 +1,6 @@
+fastmcp
+pydantic
+pyyaml
+python-dotenv
+httpx
+geopy

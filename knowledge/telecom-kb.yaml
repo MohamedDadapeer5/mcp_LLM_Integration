@@ -1,0 +1,35 @@
+- id: telecom_001
+  title: Troubleshooting No Signal or Connection
+  content: Try these steps in order 1) Power off device for 30 seconds 2) Check if airplane mode is on 3) Manually select network in settings 4) Remove and reinsert SIM card 5) Update device software. If issue persists, contact support for network diagnostics.
+  category: connectivity
+  tags: [no-signal, troubleshooting, connection]
+
+- id: telecom_002
+  title: Available Plans and Features
+  content: Basic plan $39/month includes 5GB data and unlimited calls. Premium plan $59/month includes 20GB data, unlimited international texting. Business plan $99/month includes 50GB data, priority support. All plans include free WiFi calling.
+  category: plans
+  tags: [plan, features, data]
+
+- id: telecom_003
+  title: Understanding Your Bill
+  content: Bill includes base plan charge, data overages, and taxes. Overages cost $10 per 1GB. View itemized charges in online account. Bill cycles on the same day monthly. Auto-pay enrollment gets $5 discount.
+  category: billing
+  tags: [bill, charges, overage]
+
+- id: telecom_004
+  title: Device Setup and Configuration
+  content: New devices auto-configure on first connection. For manual setup, go to Settings > Network. APN is auto-detected. For iPhone, settings update automatically via carrier settings. For Android, download carrier configuration app from Play Store.
+  category: devices
+  tags: [device, setup, configuration]
+
+- id: telecom_005
+  title: International Roaming and Travel
+  content: International roaming is $2/day or $15/week. Includes 2GB daily data in 200+ countries. Check country list at roaming.example.com. Text 2 days before travel for setup. Alternatively, buy local SIM for long stays. WiFi calling free everywhere.
+  category: roaming
+  tags: [roaming, international, travel]
+
+- id: telecom_006
+  title: Account Management and Security
+  content: Manage account via app or web portal. Enable two-factor authentication for security. Authorize device changes in account settings. Monitor data usage in real-time. Set usage alerts. Can change password anytime.
+  category: account
+  tags: [account, security, management]

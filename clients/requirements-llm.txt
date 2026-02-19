@@ -1,0 +1,6 @@
+# LLM Client Dependencies (Gemini)
+# Install with: pip install -r clients/requirements-llm.txt
+
+google-generativeai>=0.7.2   # Gemini API client
+httpx>=0.24.0                # Async HTTP client
+python-dotenv>=1.0.0         # Environment variables
